@@ -63,13 +63,13 @@ along with this software (see the LICENSE.md file). If not, see
                 <label text="Sales Orders" type="h4" style="q-ma-lg"/>
                 <container style="row q-gutter-x-sm">
                     <render-mode><text type="qvt"><![CDATA[
-                        <q-btn class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("DashboardPlaced")}" to="/zapps/SalesOrder">
+                        <q-btn class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("DashboardPlaced")}" to="/xapps/PopcAdmin/Order?statusId_op=in&orderType=Sales&statusId=OrderPlaced,OrderProcessing">
                             <q-badge color="primary" floating>${orderPlacedCount}</q-badge>
                         </q-btn>
-                        <q-btn  class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("DashboardApproved")}" to="/zapps/SalesOrder">
+                        <q-btn  class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("DashboardApproved")}" to="/xapps/PopcAdmin/Order?statusId_op=in&orderType=Sales&statusId=OrderApproved,OrderSent">
                             <q-badge color="primary" floating>${orderApprovedCount}</q-badge>
                         </q-btn>
-                        <q-btn  class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("DashboardHold")}" to="/zapps/SalesOrder">
+                        <q-btn  class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("DashboardHold")}" to="/xapps/PopcAdmin/Order?statusId=OrderHold&orderType=Sales">
                             <q-badge color="primary" floating>${orderHeldCount}</q-badge>
                         </q-btn>
                     ]]></text></render-mode>
@@ -78,10 +78,10 @@ along with this software (see the LICENSE.md file). If not, see
                 <label text="Requests" type="h4" style="q-ma-lg"/>
                 <container style="row q-gutter-x-sm">
                     <render-mode><text type="qvt"><![CDATA[
-                    <q-btn class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("DashboardSubmitted")}" to="/zapps/Request">
+                    <q-btn class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("DashboardSubmitted")}" to="/xapps/PopcAdmin/Request">
                         <q-badge color="primary" floating>${requestSubmittedCount}</q-badge>
                     </q-btn>
-                    <q-btn  class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("DashboardInProgress")}" to="/zapps/Request">
+                    <q-btn  class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("DashboardInProgress")}" to="/xapps/PopcAdmin/Request">
                         <q-badge color="primary" floating>${requestInProgressCount}</q-badge>
                     </q-btn>
                 ]]></text></render-mode>
@@ -98,7 +98,7 @@ along with this software (see the LICENSE.md file). If not, see
                 <link url="../Order" text="DashboardPurchaseOrders" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Purchasing.png" parameter-map="[orderType:'Purchase']"/>
 
-                <link url="../Asset" text="DashboardInventoryAssets" link-type="anchor-button" style="q-pa-sm full-width"
+                <link url="../Asset/Asset/FindSummary?assetTypeEnumId=AstTpInventory" text="DashboardInventoryAssets" link-type="anchor-button" style="q-pa-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Inventory.png"/>
 
             </row-col><row-col sm="6" style="q-gutter-y-sm">
@@ -117,13 +117,13 @@ along with this software (see the LICENSE.md file). If not, see
                 <link url="../Return" text="DashboardReturns" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Return.png"/>
 
-                <link url="../Shipment?parentShipmentType=ShpTpIncoming" text="DashboardIncomingShipment" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../Shipment/FindShipment?parentShipmentType=ShpTpIncoming" text="DashboardIncomingShipment" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Receiving.png"/>
 
             </row-col><row-col sm="6" style="q-gutter-y-sm">
                 <link url="../Shipping" text="DashboardShipping" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Picking.png"/>
-                <link url="../Shipment" text="DashboardOutgoingShipment" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../Shipment/FindShipment?parentShipmentType=ShpTpOutgoing" text="DashboardOutgoingShipment" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Shipping.png"/>
 
             </row-col></container-row>
