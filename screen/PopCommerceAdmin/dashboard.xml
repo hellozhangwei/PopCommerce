@@ -78,10 +78,10 @@ along with this software (see the LICENSE.md file). If not, see
                 <label text="Requests" type="h4" style="q-ma-lg"/>
                 <container style="row q-gutter-x-sm">
                     <render-mode><text type="qvt"><![CDATA[
-                    <q-btn class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("DashboardSubmitted")}" to="/xapps/PopcAdmin/Request">
+                    <q-btn class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("DashboardSubmitted")}" to="/xapps/PopcAdmin/Request?statusId=ReqSubmitted&roleTypeId=Customer">
                         <q-badge color="primary" floating>${requestSubmittedCount}</q-badge>
                     </q-btn>
-                    <q-btn  class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("DashboardInProgress")}" to="/xapps/PopcAdmin/Request">
+                    <q-btn  class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("DashboardInProgress")}" to="/xapps/PopcAdmin/Request?statusId_op=in&roleTypeId=Customer&statusId=ReqReviewed,ReqInProgress">
                         <q-badge color="primary" floating>${requestInProgressCount}</q-badge>
                     </q-btn>
                 ]]></text></render-mode>
