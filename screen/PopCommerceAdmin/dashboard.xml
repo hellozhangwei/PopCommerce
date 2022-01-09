@@ -63,13 +63,13 @@ along with this software (see the LICENSE.md file). If not, see
                 <label text="Sales Orders" type="h4" style="q-ma-lg"/>
                 <container style="row q-gutter-x-sm">
                     <render-mode><text type="qvt"><![CDATA[
-                        <q-btn class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("DashboardPlaced")}" to="/xapps/PopcAdmin/Order?statusId_op=in&orderType=Sales&statusId=OrderPlaced,OrderProcessing">
+                        <q-btn class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("Placed")}" to="/xapps/PopcAdmin/Order?statusId_op=in&orderType=Sales&statusId=OrderPlaced,OrderProcessing">
                             <q-badge color="primary" floating>${orderPlacedCount}</q-badge>
                         </q-btn>
-                        <q-btn  class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("DashboardApproved")}" to="/xapps/PopcAdmin/Order?statusId_op=in&orderType=Sales&statusId=OrderApproved,OrderSent">
+                        <q-btn  class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("Approved")}" to="/xapps/PopcAdmin/Order?statusId_op=in&orderType=Sales&statusId=OrderApproved,OrderSent">
                             <q-badge color="primary" floating>${orderApprovedCount}</q-badge>
                         </q-btn>
-                        <q-btn  class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("DashboardHold")}" to="/xapps/PopcAdmin/Order?statusId=OrderHold&orderType=Sales">
+                        <q-btn  class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("Hold")}" to="/xapps/PopcAdmin/Order?statusId=OrderHold&orderType=Sales">
                             <q-badge color="primary" floating>${orderHeldCount}</q-badge>
                         </q-btn>
                     ]]></text></render-mode>
@@ -78,10 +78,10 @@ along with this software (see the LICENSE.md file). If not, see
                 <label text="Requests" type="h4" style="q-ma-lg"/>
                 <container style="row q-gutter-x-sm">
                     <render-mode><text type="qvt"><![CDATA[
-                    <q-btn class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("DashboardSubmitted")}" to="/xapps/PopcAdmin/Request?statusId=ReqSubmitted&roleTypeId=Customer">
+                    <q-btn class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("Submitted")}" to="/xapps/PopcAdmin/Request?statusId=ReqSubmitted&roleTypeId=Customer">
                         <q-badge color="primary" floating>${requestSubmittedCount}</q-badge>
                     </q-btn>
-                    <q-btn  class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("DashboardInProgress")}" to="/xapps/PopcAdmin/Request?statusId_op=in&roleTypeId=Customer&statusId=ReqReviewed,ReqInProgress">
+                    <q-btn  class="col" no-caps outline text-color="primary" label="${ec.getL10n().localize("In Progress")}" to="/xapps/PopcAdmin/Request?statusId_op=in&roleTypeId=Customer&statusId=ReqReviewed,ReqInProgress">
                         <q-badge color="primary" floating>${requestInProgressCount}</q-badge>
                     </q-btn>
                 ]]></text></render-mode>
@@ -92,73 +92,73 @@ along with this software (see the LICENSE.md file). If not, see
         <container-row><row-col sm="1"><label text="&amp;nbsp;" encode="false"/></row-col><row-col sm="4" style="text-center">
             <label text="Operate" type="h4" style="q-ma-lg"/>
             <container-row><row-col sm="6" style="q-gutter-y-sm">
-                <link url="../Supplier" text="DashboardSuppliers" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../Supplier" text="Suppliers" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Supplier.png"/>
 
-                <link url="../Order" text="DashboardPurchaseOrders" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../Order" text="Purchase Orders" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Purchasing.png" parameter-map="[orderType:'Purchase']"/>
 
-                <link url="../Asset/Asset/FindSummary?assetTypeEnumId=AstTpInventory" text="DashboardInventoryAssets" link-type="anchor-button" style="q-pa-sm full-width"
+                <link url="../Asset/Asset/FindSummary?assetTypeEnumId=AstTpInventory" text="Inventory Assets" link-type="anchor-button" style="q-pa-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Inventory.png"/>
 
             </row-col><row-col sm="6" style="q-gutter-y-sm">
-                <link url="../Customer" text="DashboardCustomers" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../Customer" text="Customers" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Customer.png"/>
 
-                <link url="../Request" text="DashboardRequests" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../Request" text="Requests" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Request.png"/>
 
-                <link url="../Order" text="DashboardSalesOrders" link-type="anchor-button" style="q-pa-sm full-width"
+                <link url="../Order" text="Sales Orders" link-type="anchor-button" style="q-pa-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Sales.png" parameter-map="[orderType:'Sales']"/>
 
             </row-col></container-row>
             <label text="&amp;nbsp;" type="p" encode="false"/>
             <container-row><row-col sm="6" style="q-gutter-y-sm">
-                <link url="../Return" text="DashboardReturns" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../Return" text="Returns" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Return.png"/>
 
-                <link url="../Shipment/FindShipment?parentShipmentType=ShpTpIncoming" text="DashboardIncomingShipment" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../Shipment/FindShipment?parentShipmentType=ShpTpIncoming" text="Incoming Shipment" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Receiving.png"/>
 
             </row-col><row-col sm="6" style="q-gutter-y-sm">
-                <link url="../Shipping" text="DashboardShipping" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../Shipping" text="Shipping" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Picking.png"/>
-                <link url="../Shipment/FindShipment?parentShipmentType=ShpTpOutgoing" text="DashboardOutgoingShipment" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../Shipment/FindShipment?parentShipmentType=ShpTpOutgoing" text="Outgoing Shipment" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Shipping.png"/>
 
             </row-col></container-row>
         </row-col><row-col sm="2"><label text="&amp;nbsp;" encode="false"/></row-col><row-col sm="4" style="text-center">
             <label text="Manage" type="h4" style="q-ma-lg"/>
             <container-row><row-col sm="6" style="q-gutter-y-sm">
-                <link url="../Catalog" text="DashboardCatalog" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../Catalog" text="Catalog" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Catalog.png"/>
-                <link url="../Catalog/Product" text="DashboardProducts" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../Catalog/Product" text="Products" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Product.png"/>
-                <link url="../ProductStore" text="DashboardStores" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../ProductStore" text="Stores" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Store.png"/>
 
             </row-col><row-col sm="6" style="q-gutter-y-sm">
-                <link url="../Wiki/WikiSpaces" text="DashboardWikiContent" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../Wiki/WikiSpaces" text="Wiki/Content" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Wiki.png"/>
-                <link url="../Wiki/WikiBlogs" text="DashboardWikiBlogs" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../Wiki/WikiBlogs" text="Wiki Blogs" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Blog.png"/>
-                <link url="../Survey" text="DashboardSurvey" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../Survey" text="Survey" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Survey.png"/>
             </row-col></container-row>
             <label text="&amp;nbsp;" type="p" encode="false"/>
             <container-row><row-col sm="6" style="q-gutter-y-sm">
-                <link url="../Manufacturing" text="DashboardManufacturing" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../Manufacturing" text="Manufacturing" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Manufacturing.png"/>
-                <link url="../Asset" text="DashboardAsset" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../Asset" text="Asset" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Asset.png"/>
-                <link url="../Facility" text="DashboardFacility" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../Facility" text="Facility" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Facility.png"/>
             </row-col><row-col sm="6" style="q-gutter-y-sm">
-                <link url="../Party" text="DashboardParties" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../Party" text="Parties" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Parties.png"/>
-                <link url="../Accounting" text="DashboardAccounting" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../Accounting" text="Accounting" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Accounting.png"/>
-                <link url="../Accounting/Reports" text="DashboardReports" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
+                <link url="../Accounting/Reports" text="Reports" link-type="anchor-button" style="q-pa-sm q-mb-sm full-width"
                       button-outline="true" button-stack="true" button-size="12px" icon="/ssstatic/images/Report.png"/>
             </row-col></container-row>
             <label text="&amp;nbsp;" type="p" encode="false"/>
