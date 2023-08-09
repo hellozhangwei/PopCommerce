@@ -21,7 +21,7 @@ along with this software (see the LICENSE.md file). If not, see
     <actions>
         <entity-find entity-name="mantle.order.OrderHeaderAndPart" list="orderList">
             <!-- maybe actually better to show all orders, even open/cart ones: <econdition field-name="statusId" operator="not-equals" value="OrderOpen"/> -->
-            <econdition field-name="customerPartyId" from="ec.user.userAccount.partyId"/>
+            <econdition field-name="customerPartyId"/>
             <order-by field-name="-entryDate"/>
         </entity-find>
     </actions>

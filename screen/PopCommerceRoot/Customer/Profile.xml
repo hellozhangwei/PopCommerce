@@ -74,7 +74,7 @@ along with this software (see the LICENSE.md file). If not, see
                 <section name="BillingSection">
                     <actions>
                         <service-call name="mantle.account.PaymentMethodServices.get#PartyPaymentMethodInfoList"
-                                in-map="[partyId:partyId]" out-map="cciOut"/>
+                                in-map="[partyId:customerPartyId]" out-map="cciOut"/>
                     </actions>
                     <widgets>
                         <container-box>
@@ -107,7 +107,7 @@ along with this software (see the LICENSE.md file). If not, see
                 <section name="ShippingSection">
                     <actions>
                         <service-call name="mantle.party.ContactServices.get#PartyContactInfoList" out-map="shippingContactListInfo"
-                                in-map="[partyId:partyId, postalContactMechPurposeId:'PostalShippingDest',
+                                in-map="[partyId:customerPartyId, postalContactMechPurposeId:'PostalShippingDest',
                                     telecomContactMechPurposeId:'PhoneShippingDest']"/>
                     </actions>
                     <widgets>

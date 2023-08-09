@@ -12,5 +12,9 @@
             <subscreens-item name="hhwh" menu-title="HH Warehouse" menu-index="20"
                     location="component://SimpleScreens/screen/BasicHandheld/Warehouse.xml"/>
         </screen>
+        <screen location="component://webroot/screen/webroot.xml">
+            <subscreens-item name="BLogin" menu-include="false"
+                             location="component://PopCommerce/screen/BLogin.xml"/>
+        </screen>
     </screen-facade>
 </moqui-conf>

@@ -38,10 +38,10 @@ along with this software (see the LICENSE.md file). If not, see
         <set field="partyId" from="ec.user.userAccount.partyId"/>
 
         <service-call name="mantle.account.PaymentMethodServices.get#PartyPaymentMethodInfoList"
-                in-map="[partyId:partyId]" out-map="cciOut"/>
+                in-map="[partyId:customerPartyId]" out-map="cciOut"/>
 
         <service-call name="mantle.party.ContactServices.get#PartyContactInfoList" out-map="shippingContactListInfo"
-                in-map="[partyId:partyId, postalContactMechPurposeId:'PostalShippingDest',
+                in-map="[partyId:customerPartyId, postalContactMechPurposeId:'PostalShippingDest',
                     telecomContactMechPurposeId:'PhoneShippingDest']"/>
 
         <service-call name="mantle.product.StoreServices.get#StoreShippingOptions" out-map="context"
@@ -61,7 +61,7 @@ along with this software (see the LICENSE.md file). If not, see
             <box-toolbar>
                 <dynamic-dialog id="CreateCreditCardDialog" button-text="Add Credit Card"
                         transition="updatePaymentMethodInfo" width="800"
-                        parameter-map="[partyId:partyId, paymentMethodTypeEnumId:'PmtCreditCard']"/>
+                        parameter-map="[partyId:customerPartyId, paymentMethodTypeEnumId:'PmtCreditCard']"/>
             </box-toolbar>
             <box-body>
                 <container style="float-box" type="ul">
@@ -75,7 +75,7 @@ along with this software (see the LICENSE.md file). If not, see
                                 <render-mode><text type="html" location="component://SimpleScreens/template/party/PaymentMethodInfo.html.gstring"/></render-mode>
                                 <dynamic-dialog id="UpdatePaymentMethodDialog" button-text="Update"
                                         transition="updatePaymentMethodInfo" width="800"
-                                        parameter-map="[partyId:partyId, paymentMethodId:methodInfo.paymentMethodId]"/>
+                                        parameter-map="[partyId:customerPartyId, paymentMethodId:methodInfo.paymentMethodId]"/>
                                 <!-- TODO: add remove link -->
                             </container>
                         </widgets>
@@ -89,7 +89,7 @@ along with this software (see the LICENSE.md file). If not, see
             <box-toolbar>
                 <dynamic-dialog id="UpdatePostalInfo" button-text="Add Shipping Address"
                         transition="updateContactInfo" width="800"
-                        parameter-map="[partyId:partyId, postalContactMechPurposeId:'PostalShippingDest']"/>
+                        parameter-map="[partyId:customerPartyId, postalContactMechPurposeId:'PostalShippingDest']"/>
             </box-toolbar>
             <box-body>
                 <container style="float-box" type="ul">
@@ -106,7 +106,7 @@ along with this software (see the LICENSE.md file). If not, see
                                 <render-mode><text type="html" location="component://SimpleScreens/template/party/ContactInfo.html.gstring"/></render-mode>
                                 <dynamic-dialog id="UpdatePostalInfo" button-text="Update"
                                         transition="updateContactInfo" width="800"
-                                        parameter-map="[partyId:partyId, postalContactMechId:contactInfo.postalContactMechId,
+                                        parameter-map="[partyId:customerPartyId, postalContactMechId:contactInfo.postalContactMechId,
                                                         postalContactMechPurposeId:contactInfo.postalContactMechPurposeId]"/>
                             </container>
                         </widgets>

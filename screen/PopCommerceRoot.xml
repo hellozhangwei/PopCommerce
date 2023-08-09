@@ -13,8 +13,7 @@ along with this software (see the LICENSE.md file). If not, see
 <http://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-3.xsd"
-        screen-theme-type-enum-id="STT_POP_COMMERCE" standalone="true"
-        require-authentication="anonymous-view" login-path="/popc/Login">
+        screen-theme-type-enum-id="STT_POP_COMMERCE" standalone="true" login-path="/BLogin">
 
     <always-actions>
         <!-- TODO: set the productStoreId for this store here (some way to make this more dynamic?) -->
@@ -29,7 +28,11 @@ along with this software (see the LICENSE.md file). If not, see
 
         <!-- some settings used when adding to cart, etc -->
         <set field="cartOrderId" from="ec.web.sessionAttributes.cartOrderId" set-if-empty="false"/>
-        <set field="customerPartyId" from="ec.user.userAccount?.partyId"/>
+        <entity-find entity-name="mantle.party.PartyRelationship" list="toRelList">
+            <econdition field-name="fromPartyId" from="ec.user.userAccount.partyId"/>
+            <date-filter/>
+        </entity-find>
+        <set field="customerPartyId" from="toRelList?.first?.toPartyId"/>
         <!-- NOTE: if needed set additional parameters for creating an order here, for example: carrierPartyId:'_NA_', shipmentMethodEnumId:'ShMthGround' -->
         <set field="defaultOrderParameters" from="[orderId:cartOrderId, customerPartyId:customerPartyId, currencyUomId:currencyUomId,
                 productStoreId:productStoreId, salesChannelEnumId:'ScWeb']"/>
